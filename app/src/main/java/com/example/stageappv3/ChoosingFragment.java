@@ -17,6 +17,8 @@ import androidx.fragment.app.FragmentTransaction;
 public class ChoosingFragment extends Fragment{
 
     private Button btnMusician;
+    private Button btnVenue;
+    private Button btnBand;
 
     @Nullable
     @Override
@@ -29,6 +31,26 @@ public class ChoosingFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Looking4MusicianActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnVenue = (Button) view.findViewById(R.id.venueBtn);
+        btnVenue.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Looking4VenueActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnBand = (Button) view.findViewById(R.id.bandBtn);
+        btnBand.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Looking4BandActivity.class);
                 startActivity(intent);
             }
         });

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StageAPPv3">
         <activity
+            android:name=".Looking4BandActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Looking4VenueActivity"
+            android:exported="false" />
+        <activity
             android:name=".Looking4MusicianActivity"
             android:exported="false" />
         <activity
