@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="What are you looking for?"/>
+
+    <Button
+        android:id="@+id/musicianBtn"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:text="MUSICIAN"/>
+
+    <Button
+        android:id="@+id/venueBtn"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:text="VENUE"/>
+
+    <Button
+        android:id="@+id/bandBtn"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:text="BAND"/>
+
+
+</LinearLayout>

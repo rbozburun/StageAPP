@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">StageAPPv3</string>
+    <string name="title_messages">Messages</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">Profile</string>
+    <string name="messages_fragment">Messages Fragment</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="notifications_fragment">Notifications Fragment</string>
+</resources>
