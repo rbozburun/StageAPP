@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "463108034786",
+    "project_id": "stageappv3",
+    "storage_bucket": "stageappv3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463108034786:android:c18d6f34eca80e90a5cebb",
+        "android_client_info": {
+          "package_name": "com.example.stageappv3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "463108034786-oqg3spij1fbotsbkbur4kasjn1ri5nls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnVVwNjxfMSclKjcZoMI63_J7AfdCqApo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "463108034786-oqg3spij1fbotsbkbur4kasjn1ri5nls.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
