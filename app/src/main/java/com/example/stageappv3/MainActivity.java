@@ -10,6 +10,13 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity{
@@ -23,17 +30,19 @@ public class MainActivity extends AppCompatActivity{
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.stageapp_vector_logo);
 
-        // Create fragments
+        // Create fragments -------------------------------------------
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         Fragment fragment = new ChoosingFragment();
         fragmentTransaction.add(R.id.fragment_layout, fragment);
         fragmentTransaction.commit();
+        //---------------------------------------------------------------
 
         // Listen for clicks on bottom nav
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(bottomNavListener);
+
     }
 
 

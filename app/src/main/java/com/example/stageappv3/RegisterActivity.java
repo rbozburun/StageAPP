@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -49,6 +50,7 @@ public class RegisterActivity<DatabaseReferencereference> extends AppCompatActiv
                 String txtPassword = password.getText().toString();
                 String txtRole = role.getText().toString();
 
+
                 // Check registration process.
                 if (TextUtils.isEmpty(txtNameSurname) || TextUtils.isEmpty(txtPassword) || TextUtils.isEmpty(txtEmail) || TextUtils.isEmpty(txtRole)){
                     Toast.makeText(RegisterActivity.this, "All fields must be filled!", Toast.LENGTH_SHORT).show();
@@ -63,6 +65,7 @@ public class RegisterActivity<DatabaseReferencereference> extends AppCompatActiv
 
     // Register to firebase db
     private void register(String nameSurname, String email, String password, String role){
+
         auth.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override

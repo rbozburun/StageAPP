@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".Looking4MusicianActivity">
 
+    <!-- Midde Section -->
+    <FrameLayout
+        android:id="@+id/fragment_layout_onLooking4MusiciansActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/recyclerViewLooking4Musicians"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
     <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
