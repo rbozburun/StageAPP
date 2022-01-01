@@ -22,6 +22,7 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.util.HashMap;
 
+// Coded by Resul Bozburun
 public class RegisterActivity<DatabaseReferencereference> extends AppCompatActivity {
 
     MaterialEditText nameSurname, email, password, role;
@@ -78,8 +79,8 @@ public class RegisterActivity<DatabaseReferencereference> extends AppCompatActiv
                             dbRef = FirebaseDatabase.getInstance().getReference("Users").child(userId);
                             HashMap<String, String> hashMap = new HashMap<>();
                             hashMap.put("id", userId);
-                            hashMap.put("Name_Surname", nameSurname);
-                            hashMap.put("Role",role);
+                            hashMap.put("nameSurname", nameSurname);
+                            hashMap.put("role",role);
                             hashMap.put("imageURL","default");
 
                             // If registration process OK, redirect the user to login activity.

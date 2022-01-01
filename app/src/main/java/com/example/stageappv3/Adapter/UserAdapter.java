@@ -19,6 +19,7 @@ import com.example.stageappv3.R;
 import java.util.ArrayList;
 import java.util.List;
 
+// Coded by Resul Bozburun
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> {
 
     private ArrayList<User> users;
@@ -40,6 +41,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         // Get name and surname of user from modal and hold it.
         holder.txtNameSurname.setText(users.get(position).getNameSurname());
+
+        // Get name and surname of user from modal and hold it.
+        holder.txtRole.setText(users.get(position).getRole());
+
         // Get profile image of user from modal and hold it.
         holder.userImg.setImageResource(R.mipmap.ic_launcher);
 
@@ -52,12 +57,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
     public class MyViewHolder extends  RecyclerView.ViewHolder{
         TextView txtNameSurname;
+        TextView txtRole;
         ImageView userImg;
         public MyViewHolder(@NonNull View itemView){
             super(itemView);
             // Get Attrs from user_item.xml layout.
             userImg = itemView.findViewById(R.id.profileImgofUser);
             txtNameSurname = itemView.findViewById(R.id.nameSurnameofUserItem);
+            txtRole = itemView.findViewById(R.id.roleofUser);
 
         }
     }

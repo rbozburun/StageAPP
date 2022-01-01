@@ -4,15 +4,16 @@ public class User {
     String nameSurname;
     String email;
     String role;
-    String getImageURL;
+    String imageURL;
 
+    public User() {
+    }
 
-
-    public User(String nameSurname, String email, String role, String getImageURL) {
+    public User(String nameSurname, String email, String role, String imageURL) {
         this.nameSurname = nameSurname;
         this.email = email;
         this.role = role;
-        this.imageURL = getImageURL;
+        this.imageURL = imageURL;
     }
 
     public String getNameSurname() {
@@ -46,8 +47,7 @@ public class User {
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
     }
-
-    String imageURL;
+    
 
 }
 

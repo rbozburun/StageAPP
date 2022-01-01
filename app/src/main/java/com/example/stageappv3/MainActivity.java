@@ -19,6 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Map;
 
 
+// Coded by Resul Bozburun & Nesim Ozgun
 public class MainActivity extends AppCompatActivity{
 
     @Override
