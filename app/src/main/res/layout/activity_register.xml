@@ -25,14 +25,14 @@
             android:id="@+id/name_surname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Firt Name and Last Name"
+            android:hint="Firt Name and Last Name/Band Name"
             app:met_floatingLabel="normal" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/role"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Role (Guitarist etc.)"
+            android:hint="Role (Guitarist/Band etc.)"
             app:met_floatingLabel="normal" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -50,6 +50,13 @@
             android:inputType="textPassword"
             android:hint="Password"
             app:met_floatingLabel="normal" />
+
+        <CheckBox
+            android:id="@+id/checkBoxisBand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckboxClicked"
+            android:text="I'm creating a Band profile. (Check it if you are a Band)" />
 
         <Button
             android:layout_width="match_parent"

@@ -5,9 +5,12 @@ public class User {
     String email;
     String role;
     String imageURL;
+    String profileType = null;
+
 
     public User() {
     }
+
 
     public User(String nameSurname, String email, String role, String imageURL) {
         this.nameSurname = nameSurname;
@@ -46,6 +49,14 @@ public class User {
 
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
+    }
+
+    public String getProfileType() {
+        return profileType;
+    }
+
+    public void setProfileType(String profileType) {
+        this.profileType = profileType;
     }
     
 

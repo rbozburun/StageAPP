@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,6 +32,8 @@ public class RegisterActivity<DatabaseReferencereference> extends AppCompatActiv
     FirebaseAuth auth;
     DatabaseReference dbRef;
 
+    Boolean isBand = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +43,7 @@ public class RegisterActivity<DatabaseReferencereference> extends AppCompatActiv
         nameSurname = findViewById(R.id.name_surname);
         password = findViewById(R.id.password);
         role = findViewById(R.id.role);
+
         btnRegister = findViewById(R.id.btnRegister);
 
         auth = FirebaseAuth.getInstance();
@@ -58,14 +62,20 @@ public class RegisterActivity<DatabaseReferencereference> extends AppCompatActiv
                 }else if(txtPassword.length() < 8){
                     Toast.makeText(RegisterActivity.this, "Password must be at least 8 characters!", Toast.LENGTH_SHORT).show();
                 }else{
-                    register(txtNameSurname,txtEmail, txtPassword, txtRole);
+                    register(txtNameSurname,txtEmail, txtPassword, txtRole, isBand);
                 }
             }
         });
     }
 
     // Register to firebase db
-    private void register(String nameSurname, String email, String password, String role){
+    private void register(String nameSurname, String email, String password, String role, Boolean isBand){
+        String profileType;
+        if(isBand){
+            profileType = "Band";
+        }else{
+            profileType = "Musician";
+        }
 
         auth.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -74,14 +84,28 @@ public class RegisterActivity<DatabaseReferencereference> extends AppCompatActiv
                         if (task.isSuccessful()){
                             FirebaseUser firebaseUser = auth.getCurrentUser();
                             assert firebaseUser != null;
+                            String log = "a";
+                            Log.d(log,"register olmaya geldik bea");
                             String userId = firebaseUser.getUid();
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("Users").child(userId);
                             HashMap<String, String> hashMap = new HashMap<>();
-                            hashMap.put("id", userId);
-                            hashMap.put("nameSurname", nameSurname);
-                            hashMap.put("role",role);
-                            hashMap.put("imageURL","default");
+
+                            if(profileType.equals("Musician")){
+                                dbRef = FirebaseDatabase.getInstance().getReference("Users").child(userId);
+                                hashMap.put("id", userId);
+                                hashMap.put("nameSurname", nameSurname);
+                                hashMap.put("role",role);
+                                hashMap.put("isBand", profileType);
+                                hashMap.put("imageURL","default");
+
+                            } else{
+                                dbRef = FirebaseDatabase.getInstance().getReference("Bands").child(userId);
+
+                                hashMap.put("id", userId);
+                                hashMap.put("nameSurname", nameSurname);
+                                hashMap.put("role",role);
+                                hashMap.put("isBand", profileType);
+                                hashMap.put("imageURL","default");
+                            }
 
                             // If registration process OK, redirect the user to login activity.
                             dbRef.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -102,4 +126,22 @@ public class RegisterActivity<DatabaseReferencereference> extends AppCompatActiv
                 });
     }
 
+    public void onCheckboxClicked(View view) {
+
+        this.isBand  = ((CheckBox) view).isChecked();
+
+    /*
+        // Check which checkbox was clicked
+        switch(view.getId()) {
+            case R.id.checkBoxisBand:
+                if (checked){
+                    this.isBand = true;
+
+                } else{
+                    this.isBand = false;
+                }
+                break;
+            // TODO: Veggie sandwich
+        } */
+    }
 }

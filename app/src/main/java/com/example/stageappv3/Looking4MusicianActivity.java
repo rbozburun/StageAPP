@@ -60,9 +60,6 @@ public class Looking4MusicianActivity extends AppCompatActivity{
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     User user = dataSnapshot.getValue(User.class);
-                    String tag = "a";
-                    Log.d(tag,"aaaaaaaaaaaaaaa");
-                    Log.d(tag,user.toString());
                     users.add(user);
                 }
                 userAdapter = new UserAdapter(users);
