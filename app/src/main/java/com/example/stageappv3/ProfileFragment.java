@@ -40,8 +40,6 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // TO DO: Implement post sharing functionality with a recycler view.
-                String log = "a";
-                Log.d(log,"Butona tiklandi!!");
                 startActivity(new Intent(getActivity(), AddPostActivityBase.class));
 
 
