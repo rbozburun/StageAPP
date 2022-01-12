@@ -16,6 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+// Coded by Resul Bozburun & Nesim Özgün
 public class LoginActivity extends AppCompatActivity {
 
     MaterialEditText email, password;

@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+// Coded by Resul Bozburun
 public class ChoosingFragment extends Fragment{
 
     private Button btnMusician;

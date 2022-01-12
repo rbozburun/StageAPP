@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 
+// Coded by Resul Bozburun
 public class ChoosePostTypeFragment extends Fragment {
 
     Button btnPublishImg;

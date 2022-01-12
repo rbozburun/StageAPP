@@ -41,8 +41,6 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 // TO DO: Implement post sharing functionality with a recycler view.
                 startActivity(new Intent(getActivity(), AddPostActivityBase.class));
-
-
             }
         });
 

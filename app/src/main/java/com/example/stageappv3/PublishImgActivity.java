@@ -18,6 +18,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,6 +43,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.util.HashMap;
 
+// Coded by Resul Bozburun
 public class PublishImgActivity extends AppCompatActivity {
 
     ActionBar actionBar;
@@ -113,7 +115,7 @@ public class PublishImgActivity extends AppCompatActivity {
                 for (DataSnapshot ds : snapshot.getChildren()){
                     name = "" + ds.child("name").getValue();
                     email = "" + ds.child("email").getValue();
-                    email = "" + ds.child("image").getValue();
+                    dp = "" + ds.child("image").getValue();
 
                 }
 
@@ -201,7 +203,7 @@ public class PublishImgActivity extends AppCompatActivity {
                         hashMap.put("pTime",timeStamp);
 
                         // Path to store data
-                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Posts/");
+                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Posts");
                         ref.child(timeStamp).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
@@ -337,6 +339,8 @@ public class PublishImgActivity extends AppCompatActivity {
 
     private void requestStoragePermissions(){
         // Request for storage permission
+        String logT = "a";
+        Log.d(logT, "Permissions before AAAAAAAAAA");
         ActivityCompat.requestPermissions(this, storagePermissions, STORAGE_REQ_CODE);
     }
 

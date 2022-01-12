@@ -40,7 +40,6 @@ public class Looking4MusicianActivity extends AppCompatActivity{
     private DatabaseReference dbRef;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,8 +67,6 @@ public class Looking4MusicianActivity extends AppCompatActivity{
                 if (userAdapter != null) {
                     userAdapter.notifyDataSetChanged();
                 }
-
-
             }
 
             @Override

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Coded by Resul Bozburun -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,6 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="@drawable/stage_bg"
     tools:context=".StartActivity">
 
 
@@ -21,8 +23,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="StageAPP"
-            android:textSize="28sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/black"
+
+            android:textSize="38sp"
+            android:textStyle="bold" />
 
         <Button
             android:layout_width="match_parent"

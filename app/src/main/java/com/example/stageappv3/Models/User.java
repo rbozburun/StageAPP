@@ -1,5 +1,6 @@
 package com.example.stageappv3.Models;
 
+// Coded by Resul Bozburun
 public class User {
     String nameSurname;
     String email;

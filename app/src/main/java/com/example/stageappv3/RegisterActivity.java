@@ -23,7 +23,7 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.util.HashMap;
 
-// Coded by Resul Bozburun
+// Coded by Resul Bozburun & Nesim Özgün
 public class RegisterActivity<DatabaseReferencereference> extends AppCompatActivity {
 
     MaterialEditText nameSurname, email, password, role;
@@ -77,6 +77,7 @@ public class RegisterActivity<DatabaseReferencereference> extends AppCompatActiv
             profileType = "Musician";
         }
 
+
         auth.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -84,8 +85,7 @@ public class RegisterActivity<DatabaseReferencereference> extends AppCompatActiv
                         if (task.isSuccessful()){
                             FirebaseUser firebaseUser = auth.getCurrentUser();
                             assert firebaseUser != null;
-                            String log = "a";
-                            Log.d(log,"register olmaya geldik bea");
+
                             String userId = firebaseUser.getUid();
                             HashMap<String, String> hashMap = new HashMap<>();
 
@@ -106,6 +106,7 @@ public class RegisterActivity<DatabaseReferencereference> extends AppCompatActiv
                                 hashMap.put("isBand", profileType);
                                 hashMap.put("imageURL","default");
                             }
+
 
                             // If registration process OK, redirect the user to login activity.
                             dbRef.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -130,18 +131,5 @@ public class RegisterActivity<DatabaseReferencereference> extends AppCompatActiv
 
         this.isBand  = ((CheckBox) view).isChecked();
 
-    /*
-        // Check which checkbox was clicked
-        switch(view.getId()) {
-            case R.id.checkBoxisBand:
-                if (checked){
-                    this.isBand = true;
-
-                } else{
-                    this.isBand = false;
-                }
-                break;
-            // TODO: Veggie sandwich
-        } */
     }
 }

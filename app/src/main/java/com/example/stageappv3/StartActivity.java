@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+// Coded by Resul Bozburun
 public class StartActivity extends AppCompatActivity {
 
     Button btnLoginStart, btnRegisterStart;
